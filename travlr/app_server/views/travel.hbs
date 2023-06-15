@@ -3,14 +3,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Dive Sites - Bhaccasyoniztas Beach Resort Website Template</title>
+	<title>{{title}}</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="background">
 		<div id="page">
-			{{>header}}
-			</div>
+			{{> header travel="travel"}}
 			<div id="contents">
 				<div class="box">
 					<div>
@@ -18,8 +17,9 @@
 							<h1>Travel</h1>
 							<ul id="sites">
 								{{#each trips}}
+
 								<li>
-									<a href="/api/trips/{{this.code}}"><img src="images/{{this.image}}" alt="Img"></a>
+									<a href="/api/trip/{{this.code}}"><img src="images/{{this.image}}" alt="Img"></a>
 									<h2><a href="/travel">{{this.name}}</a></h2>
 									{{{this.description}}}
 								</li>
@@ -30,11 +30,7 @@
 				</div>
 			</div>
 		</div>
-		{{>footer}}
-			<p>
-				© 2023 by BHACCASYONIZTAS BEACH RESORT. All Rights Reserved
-			</p>
-		</div>
+		{{> footer}}
 	</div>
 </body>
 </html>
